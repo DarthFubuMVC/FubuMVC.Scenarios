@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6894EFF-0143-4F29-ACBF-65FD5BB32563}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FubuMVC.Scenarios.Tests</RootNamespace>
+    <AssemblyName>FubuMVC.Scenarios.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bottles">
+      <HintPath>..\packages\Bottles\lib\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore">
+      <HintPath>..\packages\FubuCore\lib\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization">
+      <HintPath>..\packages\FubuLocalization\lib\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\packages\FubuMVC.Core\lib\net40\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuTestingSupport">
+      <HintPath>..\packages\FubuTestingSupport\lib\FubuTestingSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags">
+      <HintPath>..\packages\HtmlTags\lib\4.0\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit\lib\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="StoryTeller">
+      <HintPath>..\packages\Storyteller2\lib\net40\StoryTeller.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking">
+      <HintPath>..\packages\structuremap.automocking\lib\StructureMap.AutoMocking.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="running_a_scenario.cs" />
+    <Compile Include="ScenarioExtensionsTester.cs" />
+    <Compile Include="ScenarioRegistryTester.cs" />
+    <Compile Include="StoryTeller\handling_storyteller_scenario_failures.cs" />
+    <Compile Include="StoryTeller\handling_storyteller_scenario_successes.cs" />
+    <Compile Include="StoryTeller\StoryTellerScenarioTester.cs" />
+    <Compile Include="StubScenario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FubuMVC.Scenarios\FubuMVC.Scenarios.csproj">
+      <Project>{56a6211a-bdac-4912-b218-5dceaba5cd29}</Project>
+      <Name>FubuMVC.Scenarios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
